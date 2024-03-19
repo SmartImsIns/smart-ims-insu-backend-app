@@ -1,24 +1,24 @@
 package com.sims.IMOBFF.model;
 
-import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
 
-public class ResponseDTO {
+@Component
+public class ResponseDTO<T> {
 	
-	private Object data;
-	private HttpStatus statusCode;
+	private T data;
+	private Integer statusCode;
 	private String message= "";
 	
-	
-	public Object getData() {
+	public T getData() {
 		return data;
 	}
-	public void setData(Object data) {
+	public void setData(T data) {
 		this.data = data;
 	}
-	public HttpStatus getStatusCode() {
+	public Integer getStatusCode() {
 		return statusCode;
 	}
-	public void setStatusCode(HttpStatus statusCode) {
+	public void setStatusCode(Integer statusCode) {
 		this.statusCode = statusCode;
 	}
 	public String getMessage() {

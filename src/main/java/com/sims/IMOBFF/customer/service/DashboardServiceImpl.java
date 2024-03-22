@@ -1,12 +1,14 @@
-package com.sims.IMOBFF.service;
+package com.sims.IMOBFF.customer.service;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.sims.IMOBFF.model.DashboardPolicyDetails;
-import com.sims.IMOBFF.model.PolicyInput;
+import com.sims.IMOBFF.model.common.ResponseDTO;
+import com.sims.IMOBFF.model.policy.DashboardPolicyDetails;
+import com.sims.IMOBFF.model.policy.PolicyInput;
+import com.sims.IMOBFF.model.user.UserInfo;
 
 import reactor.core.publisher.Mono;
 
@@ -26,17 +28,26 @@ public class DashboardServiceImpl implements DashboardService{
 	
 
 	@Override
-	public Mono<DashboardPolicyDetails> getPolicySummary(PolicyInput policyInput) {
+	public ResponseDTO<DashboardPolicyDetails> getPolicySummary(PolicyInput policyInput) {
 		
-		Mono<DashboardPolicyDetails> policySummary = webClient.post()
+		ResponseDTO<DashboardPolicyDetails> response = new ResponseDTO<>();
+		
+		DashboardPolicyDetails policySummary = webClient.post()
 				.uri("/smartims/1.0/api/customer/policyDetails")
 				.headers(headers -> headers.setBearerAuth(authToken))
 				.contentType(MediaType.APPLICATION_JSON)
 				.body(BodyInserters.fromValue(policyInput))
 				.retrieve()
-				.bodyToMono(DashboardPolicyDetails.class);
+				.bodyToMono(DashboardPolicyDetails.class)
+				.onErrorResume(error -> {
+					System.err.println("Error during WebClient call: " + error.getMessage());
+					return Mono.empty();
+				})
+				.block();
 		
-		return policySummary;
+		response.setData(policySummary);
+		
+		return response;
 		
 	}
 	

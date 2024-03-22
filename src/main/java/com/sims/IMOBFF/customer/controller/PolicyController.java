@@ -1,4 +1,4 @@
-package com.sims.IMOBFF.controller;
+package com.sims.IMOBFF.customer.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sims.IMOBFF.model.DriverDetailsList;
-import com.sims.IMOBFF.model.PolicyRef;
-import com.sims.IMOBFF.model.ResponseDTO;
-import com.sims.IMOBFF.model.VehicleDetailsList;
-import com.sims.IMOBFF.service.PolicyService;
+import com.sims.IMOBFF.customer.service.PolicyService;
+import com.sims.IMOBFF.model.common.ResponseDTO;
+import com.sims.IMOBFF.model.driver.DriverDetailsList;
+import com.sims.IMOBFF.model.policy.PolicyRef;
+import com.sims.IMOBFF.model.vehicle.VehicleDetailsList;
 
 
 @RestController

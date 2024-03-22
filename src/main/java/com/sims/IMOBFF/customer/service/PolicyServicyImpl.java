@@ -1,16 +1,16 @@
-package com.sims.IMOBFF.service;
+package com.sims.IMOBFF.customer.service;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.sims.IMOBFF.model.DashboardPolicyDetails;
-import com.sims.IMOBFF.model.DriverDetailsList;
-import com.sims.IMOBFF.model.PolicyRef;
-import com.sims.IMOBFF.model.ResponseDTO;
-import com.sims.IMOBFF.model.Vehicle;
-import com.sims.IMOBFF.model.VehicleDetailsList;
+import com.sims.IMOBFF.model.common.ResponseDTO;
+import com.sims.IMOBFF.model.driver.DriverDetailsList;
+import com.sims.IMOBFF.model.policy.DashboardPolicyDetails;
+import com.sims.IMOBFF.model.policy.PolicyRef;
+import com.sims.IMOBFF.model.vehicle.Vehicle;
+import com.sims.IMOBFF.model.vehicle.VehicleDetailsList;
 
 import reactor.core.publisher.Mono;
 
@@ -57,7 +57,7 @@ private final WebClient webClient;
 		ResponseDTO<DriverDetailsList> response = new ResponseDTO<>();
 		
 		DriverDetailsList driverDetails = webClient.post()
-						.uri("/smartims/1.0/api/policyDetails/DriverDetails")
+						.uri("/smartims/1.0/api/policyDetails/driverDetails")
 						.headers(headers -> headers.setBearerAuth(authToken))
 						.contentType(MediaType.APPLICATION_JSON)
 						.body(BodyInserters.fromValue(policyRef))

@@ -1,14 +1,14 @@
-package com.sims.IMOBFF.service;
+package com.sims.IMOBFF.customer.service;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.sims.IMOBFF.model.DashboardPolicyDetails;
-import com.sims.IMOBFF.model.PolicyInput;
-import com.sims.IMOBFF.model.ResponseDTO;
-import com.sims.IMOBFF.model.UserInfo;
+import com.sims.IMOBFF.model.common.ResponseDTO;
+import com.sims.IMOBFF.model.policy.DashboardPolicyDetails;
+import com.sims.IMOBFF.model.policy.PolicyInput;
+import com.sims.IMOBFF.model.user.UserInfo;
 
 import reactor.core.publisher.Mono;
 

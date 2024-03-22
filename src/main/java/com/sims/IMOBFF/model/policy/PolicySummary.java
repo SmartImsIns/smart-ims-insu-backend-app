@@ -1,4 +1,4 @@
-package com.sims.IMOBFF.model;
+package com.sims.IMOBFF.model.policy;
 
 public class PolicySummary {
 
@@ -10,8 +10,8 @@ public class PolicySummary {
 	private String carrierQuoteNumber;
 	private String tenure;
 	private Integer riskCount;
-	private String basePrimium;
-	private String duePremium;
+	private String writtenPremium;
+	private String writtenFeeAmt;
 	private String productName;
 	private String effectiveDate;
 	private String expiryDate;
@@ -64,17 +64,17 @@ public class PolicySummary {
 	public void setRiskCount(Integer riskCount) {
 		this.riskCount = riskCount;
 	}
-	public String getBasePrimium() {
-		return basePrimium;
+	public String getWrittenPremium() {
+		return writtenPremium;
 	}
-	public void setBasePrimium(String basePrimium) {
-		this.basePrimium = basePrimium;
+	public void setWrittenPremium(String writtenPremium) {
+		this.writtenPremium = writtenPremium;
 	}
-	public String getDuePremium() {
-		return duePremium;
+	public String getWrittenFeeAmt() {
+		return writtenFeeAmt;
 	}
-	public void setDuePremium(String duePremium) {
-		this.duePremium = duePremium;
+	public void setWrittenFeeAmt(String writtenFeeAmt) {
+		this.writtenFeeAmt = writtenFeeAmt;
 	}
 	public String getProductName() {
 		return productName;
@@ -97,10 +97,12 @@ public class PolicySummary {
 	@Override
 	public String toString() {
 		return String.format(
-				"PolicySummary [policyRef=%s, lineCode=%s, carrierCode=%s, carrierPolicyNo=%s, carrierPolicyStatus=%s, carrierQuoteNumber=%s, tenure=%s, riskCount=%s, basePrimium=%s, duePremium=%s, productName=%s, effectiveDate=%s, expiryDate=%s]",
+				"PolicySummary [policyRef=%s, lineCode=%s, carrierCode=%s, carrierPolicyNo=%s, carrierPolicyStatus=%s, carrierQuoteNumber=%s, tenure=%s, riskCount=%s, writtenPremium=%s, writtenFeeAmt=%s, productName=%s, effectiveDate=%s, expiryDate=%s]",
 				policyRef, lineCode, carrierCode, carrierPolicyNo, carrierPolicyStatus, carrierQuoteNumber, tenure,
-				riskCount, basePrimium, duePremium, productName, effectiveDate, expiryDate);
+				riskCount, writtenPremium, writtenFeeAmt, productName, effectiveDate, expiryDate);
 	}
+	
+	
 
 	
 }

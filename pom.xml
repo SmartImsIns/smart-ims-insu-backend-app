@@ -11,6 +11,7 @@
 	<groupId>com.sims</groupId>
 	<artifactId>IMO-BFF</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>IMO-BFF</name>
 	<description>BFF layer for the SmartIMS IMO application.</description>
 	<properties>
@@ -39,6 +40,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>webApi</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

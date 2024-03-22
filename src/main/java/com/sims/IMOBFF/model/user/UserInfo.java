@@ -1,4 +1,4 @@
-package com.sims.IMOBFF.model;
+package com.sims.IMOBFF.model.user;
 
 public class UserInfo {
 

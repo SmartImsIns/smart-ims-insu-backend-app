@@ -1,4 +1,4 @@
-package com.sims.IMOBFF.controller;
+package com.sims.IMOBFF.customer.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sims.IMOBFF.model.DashboardPolicyDetails;
-import com.sims.IMOBFF.model.PolicyInput;
-import com.sims.IMOBFF.model.ResponseDTO;
-import com.sims.IMOBFF.service.DashboardService;
+import com.sims.IMOBFF.customer.service.DashboardService;
+import com.sims.IMOBFF.model.common.ResponseDTO;
+import com.sims.IMOBFF.model.policy.DashboardPolicyDetails;
+import com.sims.IMOBFF.model.policy.PolicyInput;
 
 import jakarta.servlet.http.Cookie;
 
